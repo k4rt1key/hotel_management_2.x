@@ -720,7 +720,8 @@ public class Client
                 var client = new Socket(HOST, PORT);
                 var serverWriter = new ObjectOutputStream(client.getOutputStream());
                 var serverReader = new ObjectInputStream(client.getInputStream())
-        ) {
+        )
+        {
 
             serverWriter.writeObject(request);
 
@@ -731,7 +732,8 @@ public class Client
 
             return response;
 
-        } catch (IOException | ClassNotFoundException e) {
+        }
+        catch (Exception e) {
 
             System.out.println("❌ Error communicating with server: " + e.getMessage());
 
