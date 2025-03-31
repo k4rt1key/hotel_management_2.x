@@ -271,6 +271,11 @@ public class Worker implements Runnable
 
                 case "book_rooms":
 
+                    if(request.get("roomIds") == null)
+                    {
+                        sendErrorResponse(clientWriter, "404", "Booking failed. Send atleast one room to book.");
+                        return;
+                    }
                     var roomIds = request.get("roomIds").split(",");
 
                     var roomsToBook = java.util.Arrays
@@ -361,7 +366,8 @@ public class Worker implements Runnable
 
                             transactionsDetails.append("    ]\n");
 
-                            transactionsDetails.append("-------------------\n\n");
+                            transactionsDetails.append("\n\n ==== X ====\n\n");
+
                         }
 
                         sendSuccessResponse(
@@ -450,7 +456,7 @@ public class Worker implements Runnable
 
                                 transactionsDetails.append("    ]\n");
 
-                                transactionsDetails.append("-------------------\n\n");
+                                transactionsDetails.append("\n\n ==== X ====\n\n");
                             }
 
                             sendSuccessResponse(
@@ -536,7 +542,8 @@ public class Worker implements Runnable
 
                                 transactionsDetails.append("    ]\n");
 
-                                transactionsDetails.append("-------------------\n\n");
+                                transactionsDetails.append("\n\n ==== X ====\n\n");
+
                             }
 
                             sendSuccessResponse(

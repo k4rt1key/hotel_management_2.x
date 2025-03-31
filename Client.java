@@ -452,20 +452,19 @@ public class Client
 
             System.out.println("\n" + prompt);
 
-            System.out.print("📅 Enter Year (e.g., 2025): ");
-            var year = Integer.parseInt(scanner.nextLine().trim());
+            System.out.print("📅 Enter Day (1-31): ");
+            var day = Integer.parseInt(scanner.nextLine().trim());
 
             System.out.print("📅 Enter Month (1-12): ");
             var month = Integer.parseInt(scanner.nextLine().trim());
 
-            System.out.print("📅 Enter Day (1-31): ");
-            var day = Integer.parseInt(scanner.nextLine().trim());
+            System.out.print("📅 Enter Year (e.g., 2025): ");
+            var year = Integer.parseInt(scanner.nextLine().trim());
 
             System.out.print("⏰ Enter Hour (0-23): ");
             var hour = Integer.parseInt(scanner.nextLine().trim());
 
-            System.out.print("⏰ Enter Minute (0-59): ");
-            var minute = Integer.parseInt(scanner.nextLine().trim());
+            var minute = 0;
 
             try
             {
