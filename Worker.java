@@ -641,6 +641,14 @@ public class Worker implements Runnable
         {
             System.out.println("Server error: " + e.getMessage());
         }
+        finally
+        {
+            try {
+                client.close();
+            } catch (IOException e) {
+                System.out.println("Error during closing client sockets");;
+            }
+        }
     }
 
     private void sendSuccessResponse(ObjectOutputStream writer, String message) throws IOException
